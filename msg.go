@@ -29,10 +29,5 @@ func ParseMessage(msg string) (m Message, err error) {
 }
 
 func (m Message) String() string {
-	loc := m.Location
-	if loc == "" {
-		loc = "0.0,0.0"
-	}
-
-	return fmt.Sprintf("%s|%s|%s|%s", m.Channel, m.User, loc, m.Text)
+	return fmt.Sprintf("%s|%s|%s|%s", m.Channel, m.User, m.Location, m.Text)
 }
